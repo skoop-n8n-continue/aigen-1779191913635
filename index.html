@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="./manifest.json">
-  <!-- skoop-live-runtime -->
-  <script src="./skoop-live.js"></script>
+    <link rel="manifest" href="./manifest.json">
+    <!-- skoop-live-runtime -->
+    <script src="./skoop-live.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Ai App Builder</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to Ai App Builder</h1>
-    <script src="script.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./sw.js')
-          .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
-          .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
-      });
-    }
-  </script>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="https://cdn.prod.website-files.com/6316d11d553f411d6f1fa732/68485a060c25431cf7bd856b_SKOOP.svg" alt="Skoop Logo" class="logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Solutions</a>
+            <a href="#">Hardware</a>
+            <a href="#">Pricing</a>
+            <a href="#">Resources</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Log In</a>
+            <a href="#" class="btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <span class="badge">New Release</span>
+            <h1>Welcome to<br><span class="highlight">Ai App Builder</span></h1>
+            <p>Create stunning, interactive applications for your digital signage in minutes. No coding required, powered by advanced artificial intelligence.</p>
+            <div class="cta-group">
+                <button class="btn-primary btn-large">Start Building Now</button>
+                <button class="btn-secondary btn-large">Watch Demo</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="app-mockup">
+                <div class="mockup-header">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+                <div class="mockup-body">
+                    <div class="ai-pulse">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Generating App...</h3>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js')
+            .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
+            .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
+        });
+      }
+    </script>
 </body>
 </html>
